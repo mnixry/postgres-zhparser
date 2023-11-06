@@ -1,9 +1,12 @@
-ARG version=16
+ARG version
 
 FROM postgres:${version}-bookworm AS builder
 
+ARG version
+
+ENV PG_DEV_PACKAGE=postgresql-server-dev-${version}
 RUN apt-get update && \
-    apt-get install -y build-essential git-core autoconf automake libtool postgresql-server-dev-${version} && \
+    apt-get install -y build-essential git-core autoconf automake libtool $PG_DEV_PACKAGE && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
