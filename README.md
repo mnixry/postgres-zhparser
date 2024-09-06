@@ -2,6 +2,11 @@
 
 Docker build scripts for <https://github.com/amutu/zhparser> PostgreSQL extension.
 
+[![Docker Image CI](https://github.com/mnixry/postgres-zhparser/actions/workflows/main.yml/badge.svg)](https://github.com/mnixry/postgres-zhparser/actions/workflows/main.yml)
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/mixdeve/postgres-zhparser?style=for-the-badge)](https://hub.docker.com/r/mixdeve/postgres-zhparser)
+
+
 ## Usage
 
 - Supported versions:
