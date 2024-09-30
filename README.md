@@ -15,6 +15,7 @@ Docker build scripts for <https://github.com/amutu/zhparser> PostgreSQL extensio
   - 14
   - 15
   - 16
+  - 17
 
 - Supported architectures:
   - `linux/amd64`
