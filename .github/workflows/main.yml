@@ -21,7 +21,6 @@ concurrency:
 jobs:
   build-and-push-image:
     name: Build and Push Image
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -67,6 +66,7 @@ jobs:
         with:
           context: .
           build-args: version=${{ matrix.version }}
+          pull: true
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
