@@ -3,12 +3,13 @@ ARG version
 FROM postgres:${version}-bookworm AS builder
 
 ARG version
-
+ENV DEBIAN_FRONTEND=noninteractive
 ENV PG_DEV_PACKAGE=postgresql-server-dev-${version}
-RUN apt-get update && \
-    apt-get install -y build-essential git-core autoconf automake libtool $PG_DEV_PACKAGE && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
+    --mount=target=/var/cache/apt,type=cache,sharing=locked \
+    rm -f /etc/apt/apt.conf.d/docker-clean && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends build-essential ca-certificates git autoconf automake libtool $PG_DEV_PACKAGE 
 
 WORKDIR /tmp
 
