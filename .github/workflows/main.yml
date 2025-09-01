@@ -75,7 +75,7 @@ jobs:
           cache-from: type=gha,scope=pg${{ matrix.version }}
           cache-to: type=gha,mode=max,scope=pg${{ matrix.version }}
 
-      - uses: actions/attest-build-provenance@v2
+      - uses: actions/attest-build-provenance@v3
         id: attest
         with:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
