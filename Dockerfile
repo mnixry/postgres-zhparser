@@ -16,6 +16,7 @@ WORKDIR /tmp
 RUN git clone https://github.com/hightman/scws && \
     cd scws && \
     touch README && \
+    sed -i '/^\s*#/d' Makefile.am && \
     aclocal && \
     autoconf && \
     autoheader && \
