@@ -62,7 +62,7 @@ jobs:
             ${{ env.DOCKER_USERNAME }}/postgres-zhparser
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: docker/build-push-action@v6
+      - uses: docker/build-push-action@v7
         id: push
         with:
           context: .
